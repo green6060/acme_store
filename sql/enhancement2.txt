@@ -1,0 +1,20 @@
+INSERT INTO clients
+	(clientFirstName, clientLastName, clientEmail, clientPassword, comments)
+VALUES
+	("Tony", "Stark", "tony@starkent.com", "Iam1ronM@n", "I am the real Ironman");
+
+UPDATE clients
+SET clientLevel = '3'
+WHERE clientId = 1;
+
+UPDATE inventory
+SET invName = REPLACE (invName, 'Nylon', 'Climbing')
+WHERE invName LIKE 'Nylon Rope';
+
+SELECT inventory.invName, categories.categoryId
+FROM inventory INNER JOIN categories 
+ON inventory.categoryId = categories.categoryId
+WHERE categories.categoryId = 3
+
+DELETE FROM `inventory` 
+WHERE invId = 7;
